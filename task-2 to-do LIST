@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #9ed8ff;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #todo-container {
+      width: 300px;
+      background-color: #e98b8b;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+
+    #task-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .task input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .delete-button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .delete-button:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="todo-container">
+    <h1>To-Do List</h1>
+    <input type="text" id="task-input" placeholder="Enter task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="task-list"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      var taskInput = document.getElementById("task-input");
+      var taskText = taskInput.value.trim();
+
+      if (taskText !== "") {
+        var taskList = document.getElementById("task-list");
+
+        // Create task item
+        var taskItem = document.createElement("li");
+        taskItem.className = "task";
+
+        // Create checkbox
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.addEventListener("change", function() {
+          toggleTaskCompleted(this);
+        });
+
+        // Create task text
+        var taskTextElement = document.createElement("span");
+        taskTextElement.textContent = taskText;
+
+        // Create delete button
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.className = "delete-button";
+        deleteButton.addEventListener("click", function() {
+          deleteTask(this);
+        });
+
+        // Append elements to task item
+        taskItem.appendChild(checkbox);
+        taskItem.appendChild(taskTextElement);
+        taskItem.appendChild(deleteButton);
+
+        // Append task item to task list
+        taskList.appendChild(taskItem);
+
+        // Clear input field
+        taskInput.value = "";
+      }
+    }
+
+    function toggleTaskCompleted(checkbox) {
+      var taskTextElement = checkbox.nextElementSibling;
+      if (checkbox.checked) {
+        taskTextElement.style.textDecoration = "line-through";
+      } else {
+        taskTextElement.style.textDecoration = "none";
+      }
+    }
+
+    function deleteTask(button) {
+      var taskItem = button.parentElement;
+      taskItem.remove();
+    }
+  </script>
+
+</body>
+</html>
