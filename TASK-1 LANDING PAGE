@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARIBHAVAN RESTAURANT</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            background-color:skyblue;
+        }
+
+        .category {
+            flex: 1 1 200px;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonials {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 50px;
+            
+        }
+
+        .contact-us {
+            text-align: center;
+            padding: 50px;
+            background-color:grey;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HARIBHAVAN</h1>
+        <img src="https://i.pinimg.com/564x/0f/64/8a/0f648a264b8179e13a7c6ff540da4e4f.jpg"></img>
+    </header>
+
+    <nav>
+        <a href="#menu">Menu</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contactus">Contact Us</a>
+        <a href="#categories">Food Categories</a>
+    </nav>
+
+    <div class="hero-section">
+        <h1>Welcome to the Best Food Experience</h1>
+        <p>Discover a world of delicious flavors</p>
+        <img src="https://i.pinimg.com/564x/f8/66/ab/f866ab97759989f7701522183cf3c4ab.jpg"></img>
+    </div>
+
+    <section id="categories" class="categories">
+        <div class="category">
+            <h2>Appetizers</h2>
+            <p>Delicious starters to kick off your meal.</p>
+        </div>
+        <div class="category">
+            <h2>Main Courses</h2>
+            <p>Hearty and flavorful main dishes.</p>
+        </div>
+        <div class="category">
+            <h2>Desserts</h2>
+            <p>Sweet treats to satisfy your cravings.</p>
+        </div>
+    </section>
+
+    <div id="testimonials" class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <p>"Amazing food and excellent service! Will definitely be coming back."</p>
+        <p>"The flavors are out of this world. A must-try for any food lover!"</p>
+    </div>
+
+    <div id="contactus" class="contact-us">
+        <h2>Contact Us</h2>
+        <p>Have a question or want to make a reservation? Contact us below:</p>
+        <!-- Add your contact form here -->
+    </div>
+
+    <script>
+        // Add any JavaScript functionalities here
+    </script>
+</body>
+</html>
